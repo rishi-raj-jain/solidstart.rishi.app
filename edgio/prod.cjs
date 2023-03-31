@@ -1,4 +1,6 @@
-module.exports = async function prod(port) {
+const { createServer } = require('http')
+
+module.exports = async (port) => {
   process.env.PORT = port
-  await import('../dist/server.js')
+  createServer(require('../.vercel/output/functions/render.func/Users/rishirajjain/Desktop/solidstart.rishi.app/dist/index.cjs')).listen(port)
 }

@@ -23,3 +23,6 @@ gitignore
 Thumbs.db
 
 .env
+
+# Edgio generated build directory
+.edgio

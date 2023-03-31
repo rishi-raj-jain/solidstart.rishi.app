@@ -1,5 +1,6 @@
 import Header from '~/components/Header'
 import { useRouteData } from 'solid-start'
+import SocialLinks from '~/components/SocialLinks'
 import { createServerData$ } from 'solid-start/server'
 import { Storyblok as StoryblokClient } from '~/storyblok'
 
@@ -28,9 +29,9 @@ export default function Home() {
               <h2 class="mt-5 text-center text-lg text-gray-500 dark:text-white sm:text-xl md:text-left">
                 Technical Customer Success Manager at Edgio
               </h2>
-              {/* <div class="flex flex-row space-x-5">
+              <div class="flex flex-row space-x-5">
                 <SocialLinks />
-              </div> */}
+              </div>
               <div class="mt-10 h-[1px] w-full bg-gray-200 dark:bg-gray-700"></div>
               <h2 innerHTML={tagline} class="text-md mt-10 text-center text-gray-500 dark:text-white sm:text-lg md:text-left" />
             </div>

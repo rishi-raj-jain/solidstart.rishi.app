@@ -12,7 +12,7 @@ jobs:
         uses: actions/setup-node@v3
       - run: npm i
       - run: npm i -g @edgio/cli
-      - run: edg env pull ./.env -e=solidstart --token=$EDGIO_DEPLOY_TOKEN
+      - run: edg env pull ./.env --site=rishi -e=solidstart --token=$EDGIO_DEPLOY_TOKEN
         env:
           EDGIO_DEPLOY_TOKEN: ${{secrets.EDGIO_DEPLOY_TOKEN}}
       - run: edgio deploy -e=solidstart --token=$EDGIO_DEPLOY_TOKEN

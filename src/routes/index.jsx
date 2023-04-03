@@ -33,7 +33,7 @@ export default function Home() {
                 <SocialLinks />
               </div>
               <div class="mt-10 h-[1px] w-full bg-gray-200 dark:bg-gray-700"></div>
-              <h2 innerHTML={tagline} class="text-md mt-10 text-center text-gray-500 dark:text-white sm:text-lg md:text-left" />
+              {tagline() && <h2 innerHTML={tagline()} class="text-md mt-10 text-center text-gray-500 dark:text-white sm:text-lg md:text-left" />}
             </div>
             <div class="order-1 md:order-2 flex flex-col items-center md:items-end justify-center md:flex md:w-1/2">
               <div class="grayscale filter">

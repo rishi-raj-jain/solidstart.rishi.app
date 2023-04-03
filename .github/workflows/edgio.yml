@@ -11,6 +11,8 @@ jobs:
       - name: Use Node.js 16
         uses: actions/setup-node@v3
       - run: npm i
+      - run: npm run build
+      - run: cd .vercel/output/functions/render.func/ && ls -lr
       - run: npm i -g @edgio/cli
       - run: edg env pull ./.env --site=rishi -e=solidstart --token=$EDGIO_DEPLOY_TOKEN
         env:

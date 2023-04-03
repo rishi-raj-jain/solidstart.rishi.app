@@ -8,7 +8,7 @@ module.exports = async () => {
   builder.clearPreviousBuildOutput()
   await builder.exec('npm run build')
   builder.addJSAsset(join(appDir, '.env'))
-  builder.addJSAsset('.vercel/output/functions/render.func/Users/rishirajjain/Desktop/solidstart.rishi.app/dist/index.cjs')
+  builder.addJSAsset(`.vercel/output/functions/render.func/${process.cwd()}/dist/index.cjs`)
   await builder.build()
   builder.writeFileSync(join(builder.jsDir, '__backends__', 'package.json'), JSON.stringify({ type: 'commonjs' }))
 }

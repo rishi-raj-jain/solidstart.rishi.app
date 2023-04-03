@@ -7,8 +7,9 @@ module.exports = async () => {
   const builder = new DeploymentBuilder()
   builder.clearPreviousBuildOutput()
   await builder.exec('npm run build')
-  builder.addJSAsset(join(appDir, '.env'))
-  builder.addJSAsset(`.vercel/output/functions/render.func/${process.cwd()}/dist/index.cjs`)
+  const functionPath = `.vercel/output/functions/render.func/${appDir}/dist/index.cjs`
+  builder.addJSAsset(functionPath)
+  builder.writeFileSync(join(appDir, 'serverless'), functionPath)
   await builder.build()
   builder.writeFileSync(join(builder.jsDir, '__backends__', 'package.json'), JSON.stringify({ type: 'commonjs' }))
 }

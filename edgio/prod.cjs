@@ -1,4 +1,4 @@
-const { fs } = require('fs')
+const fs = require('fs')
 const { join } = require('path')
 const { createServer } = require('http')
 
